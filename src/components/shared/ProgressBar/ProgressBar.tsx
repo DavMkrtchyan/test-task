@@ -17,18 +17,23 @@ const ProgressBar = ({ onFinish }: IProgressBar) => {
       setProgress((prev) => {
         if (prev + increment >= 100) {
           clearInterval(timer);
-          onFinish();
         }
         return prev + increment;
       });
     }, interval);
-    
+
     return () => clearInterval(timer);
   }, [duration]);
 
   const fillerStyle = {
     width: `${progress}%`,
   };
+
+  useEffect(() => {
+    if (progress >= 100) {
+      onFinish();
+    }
+  }, [progress]);
 
   return (
     <div className="progress-bar-container">
