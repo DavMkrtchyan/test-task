@@ -1,0 +1,80 @@
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    .customer-info {
+      .customer-block {
+        display: flex;
+        margin-top: 35px;
+
+        .add-btn {
+          background-color: rgb(36, 194, 36);
+          color: white;
+          width: 80px;
+          height: 80px;
+          border: none;
+        }
+
+        .customer-fields {
+          gap: 10px;
+          display: flex;
+          flex-direction: column;
+          margin-right: 10px;
+
+          input {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+  .cart-header {
+    width: 80%;
+    text-align: end;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 950px) {
+  .App {
+    flex-direction: column;
+    height: 100%;
+
+    .container {
+      flex-direction: column;
+      width: 100%;
+      .customer-cards {
+        width: 100%;
+      }
+      .customer-info {
+        width: 100%;
+        .customer-block {
+          flex-direction: column;
+
+          margin: 0 20px;
+          .customer-fields {
+            input,
+            label {
+              display: block;
+              width: 100%;
+            }
+          }
+
+          .add-btn {
+            margin-top: 10px;
+            height: 30px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
